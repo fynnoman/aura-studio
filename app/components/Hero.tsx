@@ -23,35 +23,36 @@ export default function Hero() {
     <section
       id="top"
       ref={ref}
-      className="relative pt-32 md:pt-40 pb-24 md:pb-32 overflow-hidden"
+      className="relative isolate pt-32 md:pt-40 pb-24 md:pb-32 overflow-hidden min-h-[92vh]"
     >
       {/* Full-bleed hero background image */}
       <motion.div
         style={{ scale: bgScale, y: bgY }}
-        className="absolute inset-0 -z-20 pointer-events-none"
+        className="absolute inset-0 z-0 pointer-events-none"
       >
         <Image
-          src="/gallery/nails-red-almond.jpg"
+          src="/gallery/nails-01.jpg"
           alt=""
           fill
           priority
           sizes="100vw"
           className="object-cover object-center"
         />
-        {/* Soft cream/pink wash to keep content readable */}
-        <div className="absolute inset-0 bg-gradient-to-r from-[#FFF6F5]/95 via-[#FFEAF2]/70 to-[#FFF6F5]/40" />
-        <div className="absolute inset-0 bg-gradient-to-b from-[#FFF6F5]/70 via-transparent to-[#FFEAF2]/90" />
-        <div className="absolute inset-0 bg-[radial-gradient(60%_50%_at_20%_50%,rgba(255,246,245,0.85),transparent_70%)]" />
+        {/* Left → right wash so the text stays readable but the photo dominates the right side */}
+        <div className="absolute inset-0 bg-gradient-to-r from-[#FFF6F5]/90 via-[#FFF6F5]/35 to-transparent" />
+        {/* Soft top+bottom blend into the page */}
+        <div className="absolute inset-x-0 top-0 h-40 bg-gradient-to-b from-[#FFF6F5] to-transparent" />
+        <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-[#FFEAF2] to-transparent" />
       </motion.div>
 
-      {/* Animated pink blobs on top of the image */}
-      <motion.div style={{ y: blobY }} className="absolute inset-0 -z-10 pointer-events-none">
-        <div className="blob w-[520px] h-[520px] bg-aura-hot/40 -top-32 -left-24 animate-drift" />
-        <div className="blob w-[600px] h-[600px] bg-aura-rose/50 top-24 -right-40 animate-drift2" />
-        <div className="blob w-[400px] h-[400px] bg-aura-blush/60 bottom-0 left-1/3 animate-drift" />
+      {/* Animated pink blobs — sit on top of the image */}
+      <motion.div style={{ y: blobY }} className="absolute inset-0 z-10 pointer-events-none">
+        <div className="blob w-[520px] h-[520px] bg-aura-hot/35 -top-32 -left-24 animate-drift" />
+        <div className="blob w-[600px] h-[600px] bg-aura-rose/35 top-24 -right-40 animate-drift2" />
+        <div className="blob w-[400px] h-[400px] bg-aura-blush/40 bottom-0 left-1/3 animate-drift" />
       </motion.div>
 
-      <div className="mx-auto max-w-[1240px] px-6 grid lg:grid-cols-[1.05fr_1fr] gap-12 lg:gap-16 items-center">
+      <div className="relative z-20 mx-auto max-w-[1240px] px-6 grid lg:grid-cols-[1.05fr_1fr] gap-12 lg:gap-16 items-center">
         {/* LEFT — copy */}
         <motion.div style={{ y: titleY, opacity: titleOpacity }} className="relative">
           <div className="kicker mb-6">Nagelstudio · Saarlouis</div>
@@ -114,7 +115,7 @@ export default function Hero() {
         initial={{ opacity: 0, y: -10 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 1.2, duration: 0.8 }}
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-aura-ink/50 text-xs tracking-widest uppercase"
+        className="absolute z-20 bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-aura-ink/50 text-xs tracking-widest uppercase"
       >
         <span>scroll</span>
         <span className="w-px h-10 bg-gradient-to-b from-aura-deep/60 to-transparent" />

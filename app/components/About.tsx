@@ -26,7 +26,7 @@ export default function About() {
           <div className="absolute -inset-4 rounded-[36px] bg-gradient-to-br from-white/60 to-aura-blush/40 backdrop-blur-xl border border-white/60 shadow-2xl" />
           <div className="relative w-full h-full rounded-[28px] overflow-hidden shadow-2xl">
             <Image
-              src="/gallery/nails-nude.png"
+              src="/gallery/nails-03.jpg"
               alt="Aura Studio Detail"
               fill
               sizes="(max-width: 1024px) 90vw, 440px"

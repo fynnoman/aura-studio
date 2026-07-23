@@ -5,12 +5,9 @@ import { useRef } from "react";
 import Image from "next/image";
 
 const images = [
-  { src: "/gallery/nails-red-almond.jpg", label: "Ruby Almond", tag: "Stiletto · rot" },
-  { src: "/gallery/nails-stiletto-white.png", label: "White Stiletto", tag: "Modelliert · nude" },
-  { src: "/gallery/nails-nude.png", label: "Soft Nude", tag: "Klassisch · gepflegt" },
-  { src: "/gallery/nails-red-short.png", label: "Cherry Short", tag: "Kurz · rot" },
-  { src: "/gallery/nails-red-almond.jpg", label: "Bold Statement", tag: "Nageldesign" },
-  { src: "/gallery/nails-stiletto-white.png", label: "Glass Finish", tag: "Shellac" },
+  { src: "/gallery/nails-01.jpg", label: "Matte Ruby", tag: "Kurz · rot matt" },
+  { src: "/gallery/nails-02.jpg", label: "Silver Stiletto", tag: "Modelliert · nude mit Glitter" },
+  { src: "/gallery/nails-03.jpg", label: "Burgundy Sparkle", tag: "Almond · burgundy" },
 ];
 
 export default function Gallery() {
@@ -21,14 +18,14 @@ export default function Gallery() {
   });
 
   // Horizontal translate for the row of images
-  const x = useTransform(scrollYProgress, [0.05, 0.95], ["2%", "-72%"]);
+  const x = useTransform(scrollYProgress, [0.05, 0.95], ["2%", "-38%"]);
 
   // Header animations
   const headerScale = useTransform(scrollYProgress, [0, 0.15], [1, 0.94]);
   const headerOpacity = useTransform(scrollYProgress, [0, 0.15, 0.9, 1], [1, 1, 1, 0.7]);
 
   return (
-    <section id="gallery" ref={ref} className="relative h-[420vh]">
+    <section id="gallery" ref={ref} className="relative h-[280vh]">
       <div className="sticky top-0 h-screen overflow-hidden flex flex-col justify-center">
         {/* header */}
         <motion.div
@@ -88,7 +85,7 @@ function Card({
   progress: MotionValue<number>;
 }) {
   // Each card peaks at a different scroll point
-  const total = 6;
+  const total = 3;
   const step = 1 / (total + 1);
   const peak = (index + 1) * step;
   const start = Math.max(0, peak - 0.18);
