@@ -1,8 +1,7 @@
 "use client";
 
 import { motion, useScroll, useTransform } from "framer-motion";
-import { useRef } from "react";
-import Image from "next/image";
+import { useEffect, useRef } from "react";
 import ContactForm from "./ContactForm";
 
 export default function Hero() {
@@ -11,6 +10,15 @@ export default function Hero() {
     target: ref,
     offset: ["start start", "end start"],
   });
+
+  // Force reload to land at the top of the hero, not wherever the browser remembered
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+    if ("scrollRestoration" in window.history) {
+      window.history.scrollRestoration = "manual";
+    }
+    window.scrollTo(0, 0);
+  }, []);
 
   const titleY = useTransform(scrollYProgress, [0, 1], [0, -120]);
   const titleOpacity = useTransform(scrollYProgress, [0, 0.8], [1, 0]);
@@ -30,14 +38,12 @@ export default function Hero() {
         style={{ scale: bgScale, y: bgY }}
         className="absolute inset-0 z-0 pointer-events-none"
       >
-        <Image
-          src="/gallery/hero.jpg"
+        {/* Raw img, bypassing next/image optimizer to guarantee full resolution */}
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          src="/gallery/hero-v2.jpg"
           alt=""
-          fill
-          priority
-          quality={95}
-          sizes="100vw"
-          className="object-cover object-center"
+          className="absolute inset-0 w-full h-full object-cover object-center"
         />
         {/* Single top→bottom fade: 0% opacity at the top, blends into the cream page below */}
         <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#FFEAF2]/40 to-[#FFF6F5]" />
