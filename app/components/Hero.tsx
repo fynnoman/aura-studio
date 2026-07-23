@@ -39,10 +39,11 @@ export default function Hero() {
           className="object-cover object-center"
         />
         {/* Warm pink wash — image is bright white, needs colour + slight darken for text contrast */}
-        <div className="absolute inset-0 bg-gradient-to-r from-[#FFE0EC]/90 via-[#FFEAF2]/55 to-[#FFD4E4]/40" />
-        <div className="absolute inset-0 bg-[radial-gradient(80%_60%_at_25%_45%,rgba(139,30,92,0.15),transparent_70%)]" />
-        {/* Soft top+bottom blend into the page */}
-        <div className="absolute inset-x-0 top-0 h-40 bg-gradient-to-b from-[#FFF6F5] to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-r from-[#FFE0EC]/85 via-[#FFEAF2]/40 to-[#FFD4E4]/25" />
+        <div className="absolute inset-0 bg-[radial-gradient(80%_60%_at_25%_45%,rgba(139,30,92,0.12),transparent_70%)]" />
+        {/* Top: fade starts fully transparent so the image is visible at the top edge */}
+        <div className="absolute inset-x-0 top-0 h-48 bg-gradient-to-b from-transparent via-[#FFF6F5]/0 to-[#FFEAF2]/60" />
+        {/* Bottom: blend into the page */}
         <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-[#FFEAF2] to-transparent" />
       </motion.div>
 
