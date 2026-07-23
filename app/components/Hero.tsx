@@ -31,15 +31,16 @@ export default function Hero() {
         className="absolute inset-0 z-0 pointer-events-none"
       >
         <Image
-          src="/gallery/nails-01.jpg"
+          src="/gallery/hero.jpg"
           alt=""
           fill
           priority
           sizes="100vw"
           className="object-cover object-center"
         />
-        {/* Left → right wash so the text stays readable but the photo dominates the right side */}
-        <div className="absolute inset-0 bg-gradient-to-r from-[#FFF6F5]/90 via-[#FFF6F5]/35 to-transparent" />
+        {/* Warm pink wash — image is bright white, needs colour + slight darken for text contrast */}
+        <div className="absolute inset-0 bg-gradient-to-r from-[#FFE0EC]/90 via-[#FFEAF2]/55 to-[#FFD4E4]/40" />
+        <div className="absolute inset-0 bg-[radial-gradient(80%_60%_at_25%_45%,rgba(139,30,92,0.15),transparent_70%)]" />
         {/* Soft top+bottom blend into the page */}
         <div className="absolute inset-x-0 top-0 h-40 bg-gradient-to-b from-[#FFF6F5] to-transparent" />
         <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-[#FFEAF2] to-transparent" />
