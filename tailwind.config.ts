@@ -10,12 +10,14 @@ const config: Config = {
       },
       colors: {
         aura: {
-          cream: "#FFF6F5",
-          blush: "#FFD4E4",
-          rose: "#FF9CC1",
-          hot: "#FF3D8A",
-          deep: "#8B1E5C",
-          ink: "#1B0A15",
+          porcelain: "#FBEFEB",
+          porcelain2: "#F6E4E1",
+          blush: "#F4CBD6",
+          rose: "#E89AB6",
+          hot: "#E7327A",
+          plum: "#6E1240",
+          deep: "#430925",
+          ink: "#170812",
         },
       },
       backdropBlur: {
@@ -36,11 +38,16 @@ const config: Config = {
           "0%": { backgroundPosition: "-200% 0" },
           "100%": { backgroundPosition: "200% 0" },
         },
+        floaty: {
+          "0%, 100%": { transform: "translateY(0)" },
+          "50%": { transform: "translateY(-8px)" },
+        },
       },
       animation: {
         drift: "drift 18s ease-in-out infinite",
         drift2: "drift2 22s ease-in-out infinite",
         shimmer: "shimmer 3s linear infinite",
+        floaty: "floaty 6s ease-in-out infinite",
       },
     },
   },

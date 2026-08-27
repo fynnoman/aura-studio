@@ -18,9 +18,9 @@ const sans = Inter_Tight({
 });
 
 export const metadata: Metadata = {
-  title: "Aura Nagelstudio · Saarlouis",
+  title: "Aura Nagelstudio · Saarlouis — Handwerk, das dich strahlen lässt.",
   description:
-    "Aura Nagelstudio in Saarlouis — Maniküre, Pediküre, Gel- und Acrylnägel, Nageldesign. Präzises Handwerk in ruhiger Atmosphäre.",
+    "Aura Nagelstudio in Saarlouis. Präzises Handwerk, ruhige Atmosphäre, individuelle Beratung. Maniküre, Pediküre, Gel- und Acrylnägel, Shellac, Nageldesign — mitten in Saarlouis, Provinzialstraße 69.",
 };
 
 export default function RootLayout({

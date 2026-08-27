@@ -1,9 +1,11 @@
 import Navigation from "./components/Navigation";
 import Hero from "./components/Hero";
-import About from "./components/About";
+import Manifest from "./components/Manifest";
+import Philosophy from "./components/Philosophy";
+import SignatureLooks from "./components/SignatureLooks";
 import Services from "./components/Services";
-import Gallery from "./components/Gallery";
-import Contact from "./components/Contact";
+import Ritual from "./components/Ritual";
+import Studio from "./components/Studio";
 import Footer from "./components/Footer";
 
 export default function Page() {
@@ -11,10 +13,12 @@ export default function Page() {
     <main className="relative">
       <Navigation />
       <Hero />
-      <About />
+      <Manifest />
+      <Philosophy />
+      <SignatureLooks />
       <Services />
-      <Gallery />
-      <Contact />
+      <Ritual />
+      <Studio />
       <Footer />
     </main>
   );
